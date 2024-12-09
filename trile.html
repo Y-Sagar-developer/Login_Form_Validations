@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form-Validation</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <style>
+      .error-msg {
+        color: red;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="" id="frm1">
+        <input type="text" name="Username" placeholder="Username" /><br /><br />
+        <p class="error-msg">please enter valid password</p>
+        <input
+          type="password"
+          name="password"
+          placeholder="password"
+        /><br /><br />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <script>
+      const usernamefield = document.querySelector("input[type=text]");
+      const errormsg = document.querySelector(".error-msg");
+      const frm1 = document.getElementById("frm1");
+
+      const regex = /^[\w]{8,10}$/;
+
+      frm1.addEventListener("submit", function (e) {
+        const isValid = regex.test(usernamefield.value);
+        if (!isValid) {
+          errormsg.style.display = "block";
+
+          e.preventDefault();
+        } else {
+          errormsg.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

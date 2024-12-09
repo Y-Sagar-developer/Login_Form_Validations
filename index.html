@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Login Form</h1>
+      <form id="frm1">
+        <input
+          type="text"
+          name="Username"
+          id="username"
+          placeholder="Enter your username"
+          required
+        />
+        <div class="error-msg">
+          Please enter a valid username (8-10 characters)
+        </div>
+        <br /><br />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Enter your password"
+          required
+        /><br /><br />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
